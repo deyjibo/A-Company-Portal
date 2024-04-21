@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/images/back.jpg' ) ; 
+            background-size: cover;
+            background-position: center;
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .login-form {
+            margin-top: 20px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .login-form p {
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-container">
+                    <div style="text-align: center;">
+                        <img src="/images/logo.png" height="70px" width="100px" alt="Your Image" align="center">
+                    </div>
+                    <h2>Login</h2>
+                    <form class="login-form" id="login-form">
+                        <h5 style="text-align: center;">Username</h5>
+                        <input type="text" name="username" class="form-control" placeholder="Username" required>
+                        <h5 style="text-align: center;">Password</h5>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <div style="text-align: center;">
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember">Remember Me</label>
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Login">
+                    </form>
+                    <br>
+                    <div class="forgot-password-link">
+            <p style="text-align: center;"><a href="fgtpass.html">Forgot Password?</a></p>
+        </div>
+        <div class="register-link">
+            <p style="text-align: center;">Don't have an account? <a href="register.html">Register here</a>.</p>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            // Get the values of username and password
+            var username = document.getElementsByName("username")[0].value;
+            var password = document.getElementsByName("password")[0].value;
+            
+            // Here you can add your authentication logic
+            // For demo purposes, let's just redirect to dashboard.html
+            window.location.href = "user.html";
+        });
+    </script>
+    
+</body>
+</html>
